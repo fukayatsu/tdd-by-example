@@ -1,3 +1,3 @@
-TDD入門の写経をしていきます
+<a href="http://www.amazon.co.jp/gp/product/4894717115/ref=as_li_ss_tl?ie=UTF8&camp=247&creative=7399&creativeASIN=4894717115&linkCode=as2&tag=atsfky-22">テスト駆動開発入門</a><img src="http://www.assoc-amazon.jp/e/ir?t=atsfky-22&l=as2&o=9&a=4894717115" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />の写経をしていきます
 
-<iframe src="http://rcm-jp.amazon.co.jp/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=atsfky-22&o=9&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=4894717115" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
