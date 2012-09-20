@@ -6,7 +6,7 @@ class Dollar
     10
   end
 
-  def multiply(multiplier)
+  def times(multiplier)
 
   end
 end
