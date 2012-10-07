@@ -21,10 +21,20 @@ describe Money do
     Money.franc(1).currency.should == 'CHF'
   end
 
-  it '+' do
-    five = Money.dollar(5)
-    sum = five += five
-    reduced = Bank.new.reduce(sum, 'USD');
-    reduced.should == Money.dollar(10)
+  describe '#+' do
+    it 'simple' do
+      five = Money.dollar(5)
+      sum = five += five
+      reduced = Bank.new.reduce(sum, 'USD');
+      reduced.should == Money.dollar(10)
+    end
+
+    it 'return sum' do
+      five = Money.dollar 5;
+      sum = five + five;
+      sum.augend == five;
+      sum.addend == five;
+    end
   end
+
 end

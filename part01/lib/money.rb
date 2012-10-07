@@ -27,13 +27,24 @@ class Money
       self.currency == other.currency
   end
 
-  def +(added)
-    Money.new(@amount + added.amount, @currency)
+  def +(addend)
+    # Money.new(@amount + added.amount, @currency)
+    Sum.new(self, addend)
   end
 end
 
 class Bank
   def reduce(source, to)
     Money.dollar(10)
+  end
+end
+
+class Sum
+  include Expressionable
+  attr_reader :augend, :addend
+
+  def initialize(augend, addend)
+    @augend = augend
+    @addend = addend
   end
 end
