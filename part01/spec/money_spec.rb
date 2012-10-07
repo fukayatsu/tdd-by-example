@@ -39,9 +39,16 @@ describe Money do
 end
 
 describe Bank do
-  it '#reduce' do
-    sum = Sum.new(Money.dollar(3), Money.dollar(4))
-    result = Bank.new.reduce(sum, 'USD')
-    result.should == Money.dollar(7)
+  describe '#reduce' do
+    it 'sum' do
+      sum = Sum.new(Money.dollar(3), Money.dollar(4))
+      result = Bank.new.reduce(sum, 'USD')
+      result.should == Money.dollar(7)
+    end
+
+    it 'money' do
+      result = Bank.new.reduce(Money.dollar(1), 'USD')
+      result.should == Money.dollar(1)
+    end
   end
 end
