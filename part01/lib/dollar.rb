@@ -1,5 +1,6 @@
 class Dollar
   def initialize(amount)
+    @amount = amount
   end
 
   def amount
@@ -7,6 +8,6 @@ class Dollar
   end
 
   def times(multiplier)
-
+    @amount *= multiplier
   end
 end
