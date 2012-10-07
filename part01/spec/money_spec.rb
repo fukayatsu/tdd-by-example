@@ -21,4 +21,9 @@ describe Franc do
     (five.times 2).should == Franc.new(10)
     (five.times 3).should == Franc.new(15)
   end
+
+  it '#==' do
+    Franc.new(5).should == Franc.new(5)
+    Franc.new(5).should_not == Franc.new(6)
+  end
 end
