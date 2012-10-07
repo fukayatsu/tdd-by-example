@@ -18,4 +18,9 @@ describe Money do
 
     Money.dollar(5).should_not == Money.franc(5)
   end
+
+  it '#currency' do
+    Money.dollar(1).currency.should == 'USD'
+    Money.franc(1).currency.should == 'CHF'
+  end
 end
