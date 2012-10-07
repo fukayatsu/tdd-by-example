@@ -3,10 +3,6 @@
 require 'money'
 
 describe Money do
-  it '#==' do
-    Money.dollar(5).should_not == Franc.new(5)
-  end
-
   describe '#dollar' do
     it '#times' do
       five = Dollar.new 5

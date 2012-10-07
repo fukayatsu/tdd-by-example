@@ -13,6 +13,10 @@ class Money
     Dollar.new(amount)
   end
 
+  def self.franch(amount)
+    Franc.new(amount)
+  end
+
   def ==(other)
     @amount == other.amount &&
       self.class == other.class
