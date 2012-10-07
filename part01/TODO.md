@@ -2,6 +2,8 @@
 - レートが2:1の場合、$5 + 10 CHF = $10
 - amountのプライベート化
 - Moneyの丸め処理
+- equals
+- hash
 
 #DONE
 - $5 * 2 = $10

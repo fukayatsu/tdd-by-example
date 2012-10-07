@@ -11,4 +11,8 @@ describe Dollar do
     product = five.times 3
     product.amount.should == 15
   end
+
+  it 'shold equals' do
+    Dollar.new(5).should == Dollar.new(5)
+  end
 end
