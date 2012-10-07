@@ -15,4 +15,9 @@ describe Dollar do
   it 'shold equals' do
     Dollar.new(5).should == Dollar.new(5)
   end
+
+  it 'should not equals' do
+    Dollar.new(5).should_not == Dollar.new(6)
+  end
+
 end
