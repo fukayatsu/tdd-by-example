@@ -13,7 +13,7 @@ class Money
     Dollar.new(amount)
   end
 
-  def self.franch(amount)
+  def self.franc(amount)
     Franc.new(amount)
   end
 
