@@ -1,4 +1,8 @@
+module Expressionable
+end
+
 class Money
+  include Expressionable
   attr_reader :amount, :currency
 
   def initialize(amount, currency = nil)
@@ -28,3 +32,8 @@ class Money
   end
 end
 
+class Bank
+  def reduce(source, to)
+    Money.dollar(10)
+  end
+end

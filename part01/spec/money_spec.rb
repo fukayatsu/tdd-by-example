@@ -22,7 +22,9 @@ describe Money do
   end
 
   it '+' do
-    sum = Money.dollar(5) + Money.dollar(5)
-    sum.should == Money.dollar(10)
+    five = Money.dollar(5)
+    sum = five += five
+    reduced = Bank.new.reduce(sum, 'USD');
+    reduced.should == Money.dollar(10)
   end
 end
