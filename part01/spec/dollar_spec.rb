@@ -5,11 +5,8 @@ require 'dollar'
 describe Dollar do
   it '#times' do
     five = Dollar.new 5
-    product = five.times 2
-    product.amount.should == 10
-
-    product = five.times 3
-    product.amount.should == 15
+    (five.times 2).should == Dollar.new(10)
+    (five.times 3).should == Dollar.new(15)
   end
 
   it '#==' do
