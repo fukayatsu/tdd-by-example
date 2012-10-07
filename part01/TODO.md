@@ -3,9 +3,7 @@
 - Moneyの丸め処理
 - nilとの等価性
 - オブジェクトとの等価性
-- DollarとFrancの重複
-- timesの一般化
-- DollarとFrancの比較
+- 通貨
 
 #DONE
 - amountのプライベート化
@@ -13,3 +11,6 @@
 - Dollarの副作用
 - ==
 - ==の一般化
+- timesの一般化
+- DollarとFrancの重複
+- DollarとFrancの比較
