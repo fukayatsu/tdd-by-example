@@ -13,3 +13,19 @@ class Dollar
     @amount == other.amount
   end
 end
+
+class Franc
+  def initialize(amount)
+    @amount = amount
+  end
+
+  attr_reader :amount
+
+  def times(multiplier)
+    Franc.new(@amount * multiplier)
+  end
+
+  def ==(other)
+    @amount == other.amount
+  end
+end
