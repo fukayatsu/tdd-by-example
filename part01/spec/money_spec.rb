@@ -51,4 +51,12 @@ describe Bank do
       result.should == Money.dollar(1)
     end
   end
+
+  it '#add_rate' do
+    bank = Bank.new
+    bank.add_rate('CHF', 'USD', 2)
+
+    result = bank.reduce(Money.franc(2), 'USD')
+    result.should == Money.dollar(1)
+  end
 end
