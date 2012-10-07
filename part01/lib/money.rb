@@ -1,8 +1,4 @@
-module Expressionable
-end
-
 class Money
-  include Expressionable
   attr_reader :amount, :currency
 
   def initialize(amount, currency = nil)
@@ -46,7 +42,6 @@ class Bank
 end
 
 class Sum
-  include Expressionable
   attr_reader :augend, :addend
 
   def initialize(augend, addend)
