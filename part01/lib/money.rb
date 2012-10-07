@@ -14,6 +14,10 @@ class Money
     Money.new(@amount * multiplier, @currency)
   end
 
+  def reduce(to)
+    self
+  end
+
   def self.dollar(amount)
     Money.new(amount, 'USD')
   end
@@ -35,7 +39,7 @@ end
 
 class Bank
   def reduce(source, to)
-    return source if source.is_a? Money
+    return source.reduce(to) if source.is_a? Money
 
     source.reduce(to)
   end
