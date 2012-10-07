@@ -4,32 +4,32 @@ require 'money'
 
 describe Money do
   it '#==' do
-    Dollar.new(5).should_not == Franc.new(5)
-  end
-end
-
-describe Dollar do
-  it '#times' do
-    five = Dollar.new 5
-    (five.times 2).should == Dollar.new(10)
-    (five.times 3).should == Dollar.new(15)
+    Money.dollar(5).should_not == Franc.new(5)
   end
 
-  it '#==' do
-    Dollar.new(5).should == Dollar.new(5)
-    Dollar.new(5).should_not == Dollar.new(6)
-  end
-end
+  describe '#dollar' do
+    it '#times' do
+      five = Dollar.new 5
+      (five.times 2).should == Money.dollar(10)
+      (five.times 3).should == Money.dollar(15)
+    end
 
-describe Franc do
-  it '#times' do
-    five = Franc.new 5
-    (five.times 2).should == Franc.new(10)
-    (five.times 3).should == Franc.new(15)
+    it '#==' do
+      Money.dollar(5).should == Money.dollar(5)
+      Money.dollar(5).should_not == Money.dollar(6)
+    end
   end
 
-  it '#==' do
-    Franc.new(5).should == Franc.new(5)
-    Franc.new(5).should_not == Franc.new(6)
+  describe '#franc' do
+    it '#times' do
+      five = Franc.new 5
+      (five.times 2).should == Franc.new(10)
+      (five.times 3).should == Franc.new(15)
+    end
+
+    it '#==' do
+      Franc.new(5).should == Franc.new(5)
+      Franc.new(5).should_not == Franc.new(6)
+    end
   end
 end
