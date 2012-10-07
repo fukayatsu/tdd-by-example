@@ -10,12 +10,8 @@ class Money
     Money.new(@amount * multiplier, @currency)
   end
 
-  def reduce(to)
-    if @currency == 'CHF'
-      rate = 2
-    else
-      rate = 1
-    end
+  def reduce(bank, to)
+    rate = bank.rate(@currency, to)
 
     Money.new(amount / rate, to)
   end
@@ -40,10 +36,15 @@ end
 
 class Bank
   def reduce(source, to)
-    source.reduce(to)
+    source.reduce(self, to)
   end
 
   def add_rate(foo, bar, baz)
+  end
+
+  def rate(from, to)
+    return 2 if from == 'CHF' && to == 'USD'
+    1
   end
 end
 
@@ -55,7 +56,7 @@ class Sum
     @addend = addend
   end
 
-  def reduce(to)
+  def reduce(bank, to)
     amount = @augend.amount +
       @addend.amount
 
