@@ -22,5 +22,9 @@ class Money
     @amount == other.amount &&
       self.currency == other.currency
   end
+
+  def +(added)
+    Money.new(@amount + added.amount, @currency)
+  end
 end
 

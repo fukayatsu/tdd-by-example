@@ -20,4 +20,9 @@ describe Money do
     Money.dollar(1).currency.should == 'USD'
     Money.franc(1).currency.should == 'CHF'
   end
+
+  it '+' do
+    sum = Money.dollar(5) + Money.dollar(5)
+    sum.should == Money.dollar(10)
+  end
 end
