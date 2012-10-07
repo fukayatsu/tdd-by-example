@@ -1,6 +1,6 @@
 # coding: utf-8
 
-require 'dollar'
+require 'money'
 
 describe Dollar do
   it '#times' do
