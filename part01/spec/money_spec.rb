@@ -36,5 +36,12 @@ describe Money do
       sum.addend == five;
     end
   end
+end
 
+describe Bank do
+  it '#reduce' do
+    sum = Sum.new(Money.dollar(3), Money.dollar(4))
+    result = Bank.new.reduce(sum, 'USD')
+    result.should == Money.dollar(7)
+  end
 end
