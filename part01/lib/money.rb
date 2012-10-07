@@ -21,10 +21,8 @@ class Money
     @amount == other.amount &&
       self.class == other.class
   end
+
+  class Dollar < Money;end
+  class Franc < Money;end
 end
 
-class Dollar < Money
-end
-
-class Franc < Money
-end
