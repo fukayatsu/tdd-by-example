@@ -35,6 +35,16 @@ describe Money do
       sum.augend == five;
       sum.addend == five;
     end
+
+    it 'miexed addition' do
+      fiveBucks = Money.dollar(5)
+      tenFrancs = Money.franc(10)
+
+      bank = Bank.new
+      bank.add_rate('CHF', 'USD', 2)
+      result = bank.reduce((fiveBucks + tenFrancs), 'USD')
+      result.should == Money.dollar(10)
+    end
   end
 end
 
