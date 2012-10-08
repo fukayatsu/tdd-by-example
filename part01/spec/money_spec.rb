@@ -90,7 +90,11 @@ describe Sum do
     result.should == Money.dollar(15)
   end
 
-  it '#times'
+  it '#times' do
+    sum = Sum.new(five_bucks, ten_francs) * 2
+    result = bank.reduce(sum, 'USD')
+    result.should == Money.dollar(20)
+  end
 end
 
 describe Array do

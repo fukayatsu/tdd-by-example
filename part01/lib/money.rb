@@ -72,7 +72,11 @@ class Sum
     Money.new(amount, to)
   end
 
-  def + (addend)
+  def +(addend)
     Sum.new(self, addend)
+  end
+
+  def *(multiplier)
+    Sum.new(@augend * multiplier, @addend * multiplier)
   end
 end
