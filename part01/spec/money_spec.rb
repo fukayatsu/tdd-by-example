@@ -22,24 +22,22 @@ describe Money do
   end
 
   describe '#+' do
-    let (:five) { Money.dollar(5) }
+    let (:five_bucks) { Money.dollar(5) }
+    let (:ten_francs) { Money.franc(10) }
 
     it 'simple' do
-      sum = five + five
+      sum = five_bucks + five_bucks
       reduced = Bank.new.reduce(sum, 'USD');
       reduced.should == Money.dollar(10)
     end
 
     it 'return sum' do
-      sum = five + five;
-      sum.augend == five;
-      sum.addend == five;
+      sum = five_bucks + five_bucks;
+      sum.augend == five_bucks;
+      sum.addend == five_bucks;
     end
 
     it 'miexed addition' do
-      five_bucks = Money.dollar(5)
-      ten_francs = Money.franc(10)
-
       bank = Bank.new
       bank.add_rate('CHF', 'USD', 2)
       result = bank.reduce((five_bucks + ten_francs), 'USD')
