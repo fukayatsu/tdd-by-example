@@ -77,6 +77,18 @@ describe Bank do
   end
 end
 
+describe Sum do
+  it '#plus' do
+    fiveBucks = Money.dollar(5)
+    tenFrancs = Money.franc(10)
+    bank = Bank.new
+    bank.add_rate('CHF', 'USD', 2)
+    sum = Sum.new(fiveBucks, tenFrancs) + fiveBucks
+    result = bank.reduce(sum, 'USD')
+    result.should == Money.dollar(15)
+  end
+end
+
 describe Array do
   it 'equals' do
     ['abc'].should == ['abc']

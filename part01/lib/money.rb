@@ -69,4 +69,8 @@ class Sum
 
     Money.new(amount, to)
   end
+
+  def + (addend)
+    Sum.new(self, addend)
+  end
 end
