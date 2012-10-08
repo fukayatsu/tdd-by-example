@@ -22,27 +22,27 @@ describe Money do
   end
 
   describe '#+' do
+    let (:five) { Money.dollar(5) }
+
     it 'simple' do
-      five = Money.dollar(5)
-      sum = five += five
+      sum = five + five
       reduced = Bank.new.reduce(sum, 'USD');
       reduced.should == Money.dollar(10)
     end
 
     it 'return sum' do
-      five = Money.dollar 5;
       sum = five + five;
       sum.augend == five;
       sum.addend == five;
     end
 
     it 'miexed addition' do
-      fiveBucks = Money.dollar(5)
-      tenFrancs = Money.franc(10)
+      five_bucks = Money.dollar(5)
+      ten_francs = Money.franc(10)
 
       bank = Bank.new
       bank.add_rate('CHF', 'USD', 2)
-      result = bank.reduce((fiveBucks + tenFrancs), 'USD')
+      result = bank.reduce((five_bucks + ten_francs), 'USD')
       result.should == Money.dollar(10)
     end
   end
@@ -78,15 +78,21 @@ describe Bank do
 end
 
 describe Sum do
-  it '#plus' do
-    fiveBucks = Money.dollar(5)
-    tenFrancs = Money.franc(10)
-    bank = Bank.new
+  let(:five_bucks) { Money.dollar(5) }
+  let(:ten_francs) { Money.franc(10) }
+  let(:bank) {Bank.new}
+
+  before(:each) {
     bank.add_rate('CHF', 'USD', 2)
-    sum = Sum.new(fiveBucks, tenFrancs) + fiveBucks
+  }
+
+  it '#plus' do
+    sum = Sum.new(five_bucks, ten_francs) + five_bucks
     result = bank.reduce(sum, 'USD')
     result.should == Money.dollar(15)
   end
+
+  it '#times'
 end
 
 describe Array do
