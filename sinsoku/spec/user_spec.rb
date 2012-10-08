@@ -17,11 +17,11 @@ describe User do
   describe '#runnable_system?' do
     context '管理者がリンディさんの場合' do
       before do
-        @lindi = User.new(name: 'Lindi')
-        @lindi.stub!(admin?: true)
+        @lindi = User.new(name: 'lindi')
+        @lindi.stub(admin?: true)
       end
 
-      subject { @lindi }
+      subject(:lindi) { @lindi }
       it { should be_runnable_system }
     end
   end
