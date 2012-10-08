@@ -59,6 +59,12 @@ describe Bank do
     result = bank.reduce(Money.franc(2), 'USD')
     result.should == Money.dollar(1)
   end
+
+  describe '#rate' do
+    it 'identity_rate' do
+      Bank.new.rate('USD', 'USD').should == 1
+    end
+  end
 end
 
 describe Array do
