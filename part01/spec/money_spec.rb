@@ -60,3 +60,9 @@ describe Bank do
     result.should == Money.dollar(1)
   end
 end
+
+describe Array do
+  it 'equals' do
+    ['abc'].should == ['abc']
+  end
+end
