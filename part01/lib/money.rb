@@ -6,7 +6,7 @@ class Money
     @currency = currency
   end
 
-  def times(multiplier)
+  def *(multiplier)
     Money.new(@amount * multiplier, @currency)
   end
 

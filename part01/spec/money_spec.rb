@@ -3,10 +3,10 @@
 require 'money'
 
 describe Money do
-  it '#times' do
+  it '#*' do
     five = Money.dollar 5;
-    five.times(2).should == Money.dollar(10)
-    five.times(3).should == Money.dollar(15)
+    (five * 2).should == Money.dollar(10)
+    (five * 3).should == Money.dollar(15)
   end
 
   it '#==' do
