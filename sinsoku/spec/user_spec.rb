@@ -17,4 +17,16 @@ describe User do
       it { should_not be_admin }
     end
   end
+
+  describe '#runnable_system?' do
+    context '管理者がリンディさんの場合' do
+      before do
+        @lindi = User.new(name: 'Lindi')
+        @lindi.stub!(admin?: true)
+      end
+
+      subject { @lindi }
+      it { should be_runnable_system }
+    end
+  end
 end

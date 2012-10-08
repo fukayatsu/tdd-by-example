@@ -6,4 +6,8 @@ class User
   def admin?
     @role == 'admin'
   end
+
+  def runnable_system?
+    true
+  end
 end
