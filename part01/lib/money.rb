@@ -1,13 +1,19 @@
 class Money
+  class << self
+    def dollar(amount)
+      Money.new(amount, 'USD')
+    end
+
+    def franc(amount)
+      Money.new(amount, 'CHF')
+    end
+  end
+
   attr_reader :amount, :currency
 
   def initialize(amount, currency = nil)
     @amount = amount
     @currency = currency
-  end
-
-  def *(multiplier)
-    Money.new(@amount * multiplier, @currency)
   end
 
   def reduce(bank, to)
@@ -16,17 +22,13 @@ class Money
     Money.new(amount / rate, to)
   end
 
-  def self.dollar(amount)
-    Money.new(amount, 'USD')
-  end
-
-  def self.franc(amount)
-    Money.new(amount, 'CHF')
-  end
-
   def ==(other)
     @amount == other.amount &&
       self.currency == other.currency
+  end
+
+  def *(multiplier)
+    Money.new(@amount * multiplier, @currency)
   end
 
   def +(addend)
