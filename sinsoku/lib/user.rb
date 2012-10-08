@@ -1,8 +1,9 @@
 class User
   def initialize(option)
+    @role = option[:role]
   end
 
   def admin?
-    true
+    @role == 'admin'
   end
 end
