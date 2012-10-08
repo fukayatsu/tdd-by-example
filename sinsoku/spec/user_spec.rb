@@ -1,7 +1,6 @@
-require_relative 'user'
+require 'user'
 
 describe User do
   describe '#admin?' do
-    it 'hoge'
   end
 end
